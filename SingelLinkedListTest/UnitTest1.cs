@@ -14,10 +14,10 @@ namespace TestProject1
         public void Test()
         {
             LinkedList.LinkedList linkedList = new LinkedList.LinkedList();
-            linkedList.add(new Node(1));
-            linkedList.add(new Node(2));
-            linkedList.add(new Node(3));
-            linkedList.add(new Node(4));
+            linkedList.addlast(new Node(1));
+            linkedList.addlast(new Node(2));
+            linkedList.addlast(new Node(3));
+            linkedList.addlast(new Node(4));
             Assert.AreEqual(4, linkedList.size());
         }
     }
