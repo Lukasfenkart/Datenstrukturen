@@ -11,8 +11,9 @@ namespace LinkedList
         Node firstint = null;
         Node lastint = null;
         int count = 0;
+      
 
-        public void add(Node newNode)
+        public void addlast(Node newNode)
         {
             if (firstint == null)
             {
@@ -26,13 +27,56 @@ namespace LinkedList
             }
             count++;
         }
-        public void delete()
+        public void addfirst(Node newNode)
         {
-
+            if (firstint == null)
+            {
+                firstint = newNode;
+            }
+            else
+            {
+                firstint.next = newNode;
+                firstint = newNode;
+            }
+            count++;
         }
+
+
+        public void deletelast()
+        {
+            if (firstint == null)
+            {
+                Console.WriteLine("false");
+            }
+            else
+            {
+                if (firstint != lastint)
+                {
+                    firstint = firstint.next;
+                }
+
+                else
+                {
+                    firstint = lastint = null;
+                }
+                count--;
+            }
+        }
+        
 
         public int size()
         { return count; }
 
+        public void GetNode(int argData, int data)
+        {
+            if (argData == data)
+            {
+                return;
+            }
+            else
+            {
+                Console.WriteLine("null");
+            }
+        }
     }
 }
