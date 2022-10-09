@@ -67,16 +67,9 @@ namespace LinkedList
         public int size()
         { return count; }
 
-        public void GetNode(int argData, int data)
+        public Node GetFirst()
         {
-            if (argData == data)
-            {
-                return;
-            }
-            else
-            {
-                Console.WriteLine("null");
-            }
+            return firstint;
         }
     }
 }
