@@ -78,9 +78,9 @@ namespace TestProject1
             linkedList.insertfirst(1);
             linkedList.insertfirst(2);
             linkedList.insertfirst(3);
-            var node = linkedList.GetFirst();
+            Assert.AreEqual(linkedList.ToString(), "| 3 | 2 | 1 |");
             linkedList.SwitchNodes(2, 3);
-            Assert.AreEqual(node.next.data, 3);
+            Assert.AreEqual(linkedList.ToString(), "| 2 | 3 | 1 |");
         }
         [Test]
         public void TestSwitchNodes_SecondNodeIsFirstNode_NodesAreSwitched()
@@ -93,5 +93,19 @@ namespace TestProject1
             linkedList.SwitchNodes(2, 3);
             Assert.AreEqual(node.next.next.data, 2);
         }
+
+
+        [Test]
+        public void TestSwitchNodes_FirstNodeDoesNotExist_NodesAreSwitched()
+        {
+            LinkedList.LinkedList linkedList = new LinkedList.LinkedList();
+            linkedList.insertfirst(1);
+            linkedList.insertfirst(2);
+            linkedList.insertfirst(3);
+            var node = linkedList.GetFirst();
+            linkedList.SwitchNodes(42, 3);
+            Assert.AreEqual(node.next.next.data, 2);
+        }
+
     }
 }
